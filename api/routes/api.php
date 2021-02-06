@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//rotas para os controladores da api
+use App\Http\Controllers\PassportAuthController;
+use App\Http\Controllers\ProdutosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::post('register', [PassportAuthController::class, 'register']);
+Route::post('login', [PassportAuthController::class, 'login']);
+
+/*Route::middleware('auth:api')->group(function () {
+    Route::get('get-user', [PassportAuthController::class, 'userInfo']);
+    Route::resource('products', [ProdutosController::class]);
+ 
+}*/
+//rever essas rotas
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -3,17 +3,15 @@
 //namespace App\Http\Controllers\API;
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
+use App\Models\Produto;//
 use Illuminate\Http\Request;
-
-use App\Models\Produto;//adicionado
-
 use Validator;//
 
 class ProdutosController extends Controller
 {
-    /**
-* método para listar os produtos.
+  /**
+* Display a listing of the resource.
 *
 * @return \Illuminate\Http\Response
 */
@@ -27,7 +25,7 @@ public function index()
   ]);
 }
 /**
-* Método para armazenar um novo produdto.
+* Store a newly created resource in storage.
 *
 * @param  \Illuminate\Http\Request  $request
 * @return \Illuminate\Http\Response
@@ -50,7 +48,7 @@ public function store(Request $request)
   ]);
 } 
 /**
-* metodo para consulta sobre um determinado item.
+* Mostrar os dados do item em forma json.
 *
 * @param  int  $id
 * @return \Illuminate\Http\Response
@@ -59,16 +57,16 @@ public function show($id)
 {
   $product = Product::find($id);
   if (is_null($product)) {
-  return $this->sendError('Produto não encontrado.');
+  return $this->sendError('Product not found.');
   }
   return response()->json([
   "success" => true,
-  "message" => "Produto encontrado.",
+  "message" => "Product retrieved successfully.",
   "data" => $product
   ]);
 }
 /**
-* método para update de um produto.
+* Método para realizar update em um item.
 *
 * @param  \Illuminate\Http\Request  $request
 * @param  int  $id
@@ -94,18 +92,19 @@ public function update(Request $request, Product $product)
   ]);
 }
 /**
-* método para deletar de um produto.
+* Método para deletar um produto.
 *
 * @param  int  $id
 * @return \Illuminate\Http\Response
 */
 public function destroy(Product $product)
-{
-  $product->delete();
-  return response()->json([
-  "success" => true,
-  "message" => "Product deleted successfully.",
-  "data" => $product
-  ]);
-}
+  {
+    $product->delete();
+    return response()->json([
+    "success" => true,
+    "message" => "Product deleted successfully.",
+    "data" => $product
+    ]);
+  }
+
 }

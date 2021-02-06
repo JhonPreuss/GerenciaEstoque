@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <h1>Bem-vindo ao App-Max sistema de gerência de estoques</h1>
                 </div>
             </div>
         </div>

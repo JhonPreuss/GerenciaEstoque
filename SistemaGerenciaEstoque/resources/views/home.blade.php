@@ -15,6 +15,7 @@
                     @endif
 
                     <h1>Bem-vindo ao App-Max sistema de gerência de estoques</h1>
+                    <a href="{{url('usuarios')}}">Teste de listagem de usuários</a>
                 </div>
             </div>
         </div>

@@ -42,6 +42,8 @@ Route::get('/produtos', [App\Http\Controllers\ProdutosController::class, 'index'
 Route::get('/produtos/new', [App\Http\Controllers\ProdutosController::class, 'new'])->name('produtos');
 //Rota para enviar os dados de cadastro de novos produtos no estoque para o método add no controlador  do produto
 Route::post('/produtos/add', [App\Http\Controllers\ProdutosController::class, 'add'])->name('produtos');
+//Rota para editar os dados de cadastro de um produtos no estoque 
+Route::get('/produtos/{id_produto}/edit', [App\Http\Controllers\ProdutosController::class, 'edit'])->name('produtos');
 
 
 

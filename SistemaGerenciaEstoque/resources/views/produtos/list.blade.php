@@ -39,9 +39,9 @@
                             <td>{{ $u->quantidade_produto}}</td>
                             <!--<td>{{ $u->metodo_cadastro}}</td> TODO consultar da outra tabela-->
                             <td>TO DO</td>
-                            <td><a href="produtos/{{$u->id}}/edit" class="btn btn-info">Editar</a></td>
+                            <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn-info">Editar</a></td>
                             <td>
-                            <form action="produtos/delete/{{$u->id}}" method="post">
+                            <form action="produtos/delete/{{$u->id_produto}}" method="post">
                             @csrf
                             @method('delete')
                                 <button class="btn btn-danger">Excluir</button>

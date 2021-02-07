@@ -10,7 +10,7 @@
                 <div class="card-body">
                 <!-- rever  if das sessões -->
                 @if(Request::is('*/edit'))
-                    <form action="{{url('produtos/update')}}/{{$produto->id}}" method="post">
+                    <form action="{{url('produtos/update')}}/{{$produto->id_produto}}" method="post">
                     @csrf
                     <div class="form-group">
                                 <label for="exampleInputEmail1">Nome</label>
@@ -18,7 +18,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descrição</label>
-                                <textarea name="descricao_produto" class="form-control"  rows="5" cols="33" value="{{$produto->descricao_produto}}"></textarea>
+                                <textarea name="descricao_produto" class="form-control"  rows="5" cols="33" >{{$produto->descricao_produto}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">SKU</label>

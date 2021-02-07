@@ -23,7 +23,9 @@ public function add( Request $request){
     return Redirect::to('/produtos');
 
 }
-public function edit(){
-    return view('produtos.form');
+public function edit($id_produtos){
+    $produto = Produtos::findOrFail($id_produtos);
+    return view('produtos.form', ['produto' => $produto]);
+
 }
 }

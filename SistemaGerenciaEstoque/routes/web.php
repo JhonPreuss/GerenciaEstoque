@@ -38,6 +38,18 @@ Route::delete('/usuarios/delete/{id}',  [App\Http\Controllers\UsuariosController
 */
 //Rota para exibição dos produtos
 Route::get('/produtos', [App\Http\Controllers\ProdutosController::class, 'index'])->name('produtos');
+//Rota para cadastro de novos produtos no estoque
+Route::get('/produtos/new', [App\Http\Controllers\ProdutosController::class, 'new'])->name('produtos');
+//Rota para enviar os dados de cadastro de novos produtos no estoque para o método add no controlador  do produto
+Route::post('/produtos/add', [App\Http\Controllers\ProdutosController::class, 'add'])->name('produtos');
+
+
+
+
+
+
+
+
 //Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -29,15 +29,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                    @foreach( $usuarios as $u)
+                    @foreach( $produtos as $u)
 
                             <tr>
                             <th scope="row">{{ $u->id_produto}}</th>
                             <td>{{ $u->nome_produto}}</td>
-                            <td>{{ $u->sku_produto}}</td>
                             <td>{{ $u->descricao_produto}}</td>
+                            <td>{{ $u->SKU}}</td>                            
                             <td>{{ $u->quantidade_produto}}</td>
-                            <td>{{ $u->metodo_cadastro}}</td>
+                            <!--<td>{{ $u->metodo_cadastro}}</td> TODO consultar da outra tabela-->
                             <td><a href="produtos/{{$u->id}}/edit" class="btn btn-info">Editar</a></td>
                             <td>
                             <form action="produtos/delete/{{$u->id}}" method="post">

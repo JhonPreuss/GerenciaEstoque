@@ -33,6 +33,11 @@ Route::get('/usuarios/{id}/edit',  [App\Http\Controllers\UsuariosController::cla
 Route::post('/usuarios/update/{id}',  [App\Http\Controllers\UsuariosController::class, 'update'])->name('usuarios')->middleware('auth');
 //Rota para realizar as exclusões
 Route::delete('/usuarios/delete/{id}',  [App\Http\Controllers\UsuariosController::class, 'delete'])->name('usuarios')->middleware('auth');
+
+/*Rotas para o sistema de cadastro e manipulação dos produtos
+*/
+//Rota para exibição dos produtos
+Route::get('/produtos', [App\Http\Controllers\ProdutosController::class, 'index'])->name('produtos');
 //Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

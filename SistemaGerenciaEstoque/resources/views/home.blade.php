@@ -16,6 +16,8 @@
 
                     <h1>Bem-vindo ao App-Max sistema de gerência de estoques</h1>
                     <a href="{{url('usuarios')}}">Teste de listagem de usuários</a>
+                    <a href="{{url('produtos')}}">Cadastro novo produto</a>
+                    <a href="{{url('produtos/reports')}}">Histórico Estoque</a>
                 </div>
             </div>
         </div>

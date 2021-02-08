@@ -17,15 +17,10 @@ class ProdutosController extends Controller
     public function new(){
         return view('produtos.form');
     }
+    
     //metodo para tratar o post feito no form de cadastro
     //parâmetros recebidos através do método Request
-/*public function add( Request $request){
-    $produto = new Produtos;
-    $produto = $produto->create( $request->all());
-    return Redirect::to('/produtos');
-
-}*/
-public function add( Request $request){
+    public function add( Request $request){
     $produto = new Produtos;
     if (Produtos::where('SKU', $request->get('SKU'))->first()){
         \Session::flash('message', 'Código SKU já existente!');
@@ -37,7 +32,7 @@ public function add( Request $request){
         //recupero dados para criar o registro de movimentação 
         $id_produto=$produto->id_produto;
         $quantidade_moviementacao=$produto->id_produto;
-        $data_movimentacao = Carbon::now();;
+        $data_movimentacao = Carbon::now();
         //$produto->id_produto;
         $movimentacao = ['data_movimentacao'=>$data_movimentacao,'tipo_movimentacao'=>'"Cadastro"','metodo_movimentacao'=>'"Sistema"','quantidade_movimentacao'=>$quantidade_moviementacao,'id_produto'=> $id_produto];
         // novo objeto do tipo histórico para poder criar o registro da movimentação 
@@ -78,11 +73,10 @@ public function registra_baixa( $id_produto, Request $request){
     $usuario = Produtos::findOrFail( $id_produto);
     $quantidade_moviementacao=$request->get('quantidade_produto');
    
-    $quantidade_produto_estoque=Produtos::where('id_produto', $id_produto)->value('quantidade_produto');;
-  
+    $quantidade_produto_estoque=Produtos::where('id_produto', $id_produto)->value('quantidade_produto');
+    
     //testar primeiramente se a quantidade a ser baixada é possivel
     if ($quantidade_produto_estoque >= $quantidade_moviementacao){
-        echo $quantidade_produto_estoque;
 
         $quantidade_produto_estoque=$quantidade_produto_estoque-$quantidade_moviementacao;
         //realiza update com a nova quantidade de produtos no estoque

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md">
             <div class="card">
-                <div class="card-header"><a href="{{url('produtos/new')}}" class="btn btn-success">Cadastro novo produto</a> <a href="{{url('produtos/reports')}}" class="btn btn-info">Histórico Estoque</a></div>
+                <div class="card-header"><a href="{{url('produtos/new')}}" class="btn btn-success">Cadastro novo produto</a> <a href="{{url('/produtos')}}" class="btn btn-info">Estoque Geral</a> <a href="{{url('historico/new')}}" class="btn btn-info">Relatório Produtos Cadastrados</a> <a href="{{url('historico/vendidosnew')}}" class="btn btn-success">Relatório Produtos Vendidos</a></div>
 
                 <div class="card-body">
                     @if (session('status'))

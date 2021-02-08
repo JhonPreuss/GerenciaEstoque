@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md">
             <div class="card">
-                <div class="card-header"><a href="{{url('produtos/new')}}">Cadastro novo produto</a> <a href="{{url('produtos/reports')}}">Histórico Estoque</a></div>
+                <div class="card-header"><a href="{{url('produtos/new')}}" class="btn btn-success">Cadastro novo produto</a> <a href="{{url('produtos/reports')}}" class="btn btn-info">Histórico Estoque</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,6 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if(Session::has('message'))
+                        <div class="alert alert-danger" role="alert">
+                        {{ Session::get('message') }}
+                        </div>
+                     @endif
+                     @if(Session::has('msg-sucess'))
+                        <div class="alert alert-success" role="alert">
+                        {{ Session::get('msg-sucess') }}
+                        </div>
+                     @endif
 
                     <h1>Listagem dos item em estoques</h1>
                     <table class="table table-bordered">
@@ -24,6 +34,7 @@
                             <th scope="col">SKU</th>
                             <th scope="col">Quantidade</th>
                             <th scope="col">Método</th>
+                            <th scope="col">Baixa no estoque</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Excluir</th>
                             </tr>
@@ -37,9 +48,10 @@
                             <td>{{ $u->descricao_produto}}</td>
                             <td>{{ $u->SKU}}</td>                            
                             <td>{{ $u->quantidade_produto}}</td>
+                            <td>sistema</td>
                             <!--<td>{{ $u->metodo_cadastro}}</td> TODO consultar da outra tabela-->
-                            <td>TO DO</td>
-                            <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn-info">Editar</a></td>
+                            <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn btn-info">Baixa</a></td>
+                            <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn-warning">Editar</a></td>
                             <td>
                             <form action="produtos/delete/{{$u->id_produto}}" method="post">
                             @csrf

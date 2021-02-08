@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,7 +9,6 @@
                 <div class="card-header"><a href="{{ url('produtos') }}">Retornar</a></adiv>
 
                 <div class="card-body">
-                <!-- rever  if das sessões -->
                 @if(Request::is('*/edit'))
                     <form action="{{url('produtos/update')}}/{{$produto->id_produto}}" method="post">
                     @csrf
@@ -33,6 +33,12 @@
                     </form>
                 @else
                     <form action="{{url('produtos/add')}}" method="post">
+                    @if(Session::has('message'))
+                        <div class="alert alert-danger" role="alert">
+                        {{ Session::get('message') }}
+                        </div>
+                     @endif
+
                     @csrf
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nome</label>

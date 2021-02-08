@@ -50,7 +50,7 @@
                             <td>{{ $u->quantidade_produto}}</td>
                             <td>sistema</td>
                             <!--<td>{{ $u->metodo_cadastro}}</td> TODO consultar da outra tabela-->
-                            <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn btn-info">Baixa</a></td>
+                            <td><a href="produtos/{{$u->id_produto}}/baixa" class="btn btn btn-info">Baixa</a></td>
                             <td><a href="produtos/{{$u->id_produto}}/edit" class="btn btn-warning">Editar</a></td>
                             <td>
                             <form action="produtos/delete/{{$u->id_produto}}" method="post">

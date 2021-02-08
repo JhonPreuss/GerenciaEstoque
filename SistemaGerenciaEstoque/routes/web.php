@@ -46,7 +46,10 @@ Route::post('/produtos/add', [App\Http\Controllers\ProdutosController::class, 'a
 Route::get('/produtos/{id_produto}/edit', [App\Http\Controllers\ProdutosController::class, 'edit'])->name('produtos');
 //Rota para fazer o update os dados de cadastro alterado de um produtos no estoque 
 Route::post('/produtos/update/{id_produto}', [App\Http\Controllers\ProdutosController::class, 'update'])->name('produtos');
-
+//Rota para fazer a baixa de um produtos no estoque 
+Route::get('/produtos/{id_produto}/baixa', [App\Http\Controllers\ProdutosController::class, 'baixa'])->name('produtos');
+//Rota para fazer o update da quantidade de produtos no estoque 
+Route::post('/produtos/registra_baixa/{id_produto}', [App\Http\Controllers\ProdutosController::class, 'registra_baixa'])->name('produtos');
 
 
 

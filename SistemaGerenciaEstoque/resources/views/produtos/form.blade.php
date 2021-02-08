@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Quantidade</label>
-                                <input type="text" name="quantidade_produto" class="form-control" value="{{$produto->quantidade_produto}}">
+                                <input type="number" name="quantidade_produto" class="form-control" value="{{$produto->quantidade_produto}}">
                             </div>                       
 
                             <button type="submit" class="btn btn-primary">Alterar</button>

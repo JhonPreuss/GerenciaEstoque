@@ -1,5 +1,3 @@
-<3>Sistema de GerenciaEstoque - App Max</h3>
-Por último e não menos importante:
 # Ambiente de desenvolvimento
 
 1. Apache/2.4.46 (Win64) OpenSSL/1.1.1
@@ -27,8 +25,3 @@ Após instanciar o banco de dados, será possivel iniciar o uso do sistema.
 - A tabela  historico será responsável por armazenar toda e qualquer movimentação feita no estoque, ou seja, cada produto cadastrado será registrado como um Cadastro e cada produto vendido será registrado como uma Baixa no sistema
 - A tabela historico também armazena um campo aonde é destinado para indicar qual foi o sistema utilizado em cada ação, ou seja, se a ação foi feita pelo sistam ou api.
 
-
-#Observações;
-Dos tópicos não atingidos do desafio.
-1. API
-2. Teste unitário

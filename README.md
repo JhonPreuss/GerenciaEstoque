@@ -10,7 +10,7 @@ Para a instalçao do sistema, verifique se seu ambiente de trabalho corresponde 
 instale a interface gráfica ui do Laravel. nesse projeto foi utilizado Vue
 comando:
 - npm install vue
-Para a utilização inicialmente é preciso criar o sistema de tabelas do banco de dados, rodando o coamando
+Para a utilização inicialmente é preciso criar o sistema de tabelas do banco de dados, rodando o comando
 - php artisan migrate
 Após instanciar o banco de dados, será possivel iniciar o uso do sistema.
 
